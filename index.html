@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JsProject-dinesh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+           
+        }
+
+        
+        .maindiv {
+            height: auto;
+            /* background-color: steelblue; */
+            text-align: center;
+           
+        }
+       
+        .parentdiv {
+           padding: 20px 40px;
+           /* background-color: brown; */
+           display: flex;
+           justify-content: center;
+           align-items: center;
+
+        }
+        .childdiv{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .formvalid{
+            display: flex;
+            justify-content: center !important;
+            flex-wrap: wrap;
+            /* flex-direction: column !important;
+            text-align: center !important; */
+        }
+        .formbtn{
+            margin-left: 24%;
+            margin-right: 21%;
+        }
+        .finalform{
+            display: flex;
+            justify-content: center;
+        
+            flex-wrap: wrap;
+        }
+        /* .finalform :nth-last-child(1){
+            display: none;
+        } */
+        select{
+    padding: 8px 30px;
+    background-color:transparent;
+    border: none;
+    outline: 2px solid rgb(7, 255, 251);
+    border-radius: 10px;
+    font-size: 20px;
+    color:rgb(7, 255, 251);
+    font-size: 20px;
+            font-weight: 900;
+    }
+    select:hover{
+        border: 2px solid  rgb(54, 220, 13);
+            color: rgb(54, 220, 13); 
+            padding: 8px 30px;
+          
+    border: none;
+    outline: 2px solid rgb(54, 220, 13);
+   
+    }
+
+        .mainbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid rgb(7, 222, 219);
+            background-color: rgba(34, 0, 0, 0.4);
+            border-radius: 40px;
+            padding: 10px 30px;
+            margin: 5px 10px;
+            width: 80%;
+            box-sizing: border-box;
+            gap: 20px;
+            font-size: 20px;
+            font-weight: 900;
+           
+           
+        }
+        .mainbox:hover {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid rgb(54, 220, 13);
+            background-color: rgba(209, 77, 77, 0.4);
+            border-radius: 40px;
+            padding: 10px 30px;
+            margin: 5px 10px;
+            width: 80%;
+            box-sizing: border-box;
+            gap: 20px;
+            font-size: 20px;
+            font-weight: 900;
+           
+        }
+        .h1div{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            padding-top: 20px;
+        }
+        h1{
+            /* width: 50%; */
+            color:transparent;
+            position: relative;
+            font-size: 45px;
+            -webkit-text-stroke: 0.1vw rgb(7, 222, 219);
+        
+        }
+        h1::before{
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left:0;
+            
+            width:0;
+            height: 100%;
+            color: rgb(54, 220, 13);
+            -webkit-text-stroke: 0vw rgb(7, 222, 219);
+            border-right:2px solid rgb(7, 222, 219);
+            overflow: hidden;
+            animation: animate 5s linear infinite;
+            white-space: nowrap;
+        }
+        @keyframes animate{
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 100%;
+            }
+        }
+        input{
+            padding: 7px 20px;
+            /* color: black !important; */
+            border-radius: 40px;
+            border: none;
+            outline:  2px solid rgb(7, 222, 219);
+            background-color: transparent;
+            color:rgb(7, 222, 219) ;
+            font-size: 15px;
+            font-weight: 900;
+        }
+        input:hover{
+            padding: 7px 20px;
+            font-size: 15px;
+            font-weight: 900;
+            /* color: black !important; */
+            border-radius: 40px;
+            border: none;
+            outline: 2px solid  rgb(54, 220, 13);
+            background-color: transparent;
+            color: rgb(54, 220, 13);
+            
+        }
+        input::placeholder{
+            color:rgb(7, 222, 219);
+        }
+        input::placeholder:hover{
+            color: rgb(54, 220, 13);
+        }
+        button{
+            padding: 10px 20px;
+            background-color: transparent;
+            color:rgb(7, 222, 219);
+            border: 2px solid rgb(7, 222, 219);
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 900;
+        }
+        button:hover{
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 2px solid  rgb(54, 220, 13);
+            color: rgb(54, 220, 13);
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 900;
+        }
+        #mainbtn{
+            background-color:transparent;
+            padding: 9px 35px;
+            border: 2px solid rgb(7, 222, 219);
+            color: rgb(7, 222, 219);
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: 900;
+        }
+        #mainbtn:hover{
+            background-color: rgba(34, 0, 0, 0.4);
+            padding: 9px 35px;
+            border: 2px solid  rgb(54, 220, 13);
+            color: rgb(54, 220, 13);
+            margin-left: 10px;
+        }
+        input{
+            margin:0px 10px ;
+        }
+        .background-clip{
+         position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: -5; 
+           width: 100%;
+           
+        }
+        /* @media(min-aspect-ratio: 16/9) {
+            .background-clip{
+                width: 100%;
+                height: auto;
+            }
+        }
+        @media(max-aspect-ratio: 16/9) {
+            .background-clip{
+                width: 100%;
+                height: auto;
+            }
+        } */
+     
+        span{
+            color: rgb(140, 222, 7);
+        }
+        @media screen and (Min-width:320px) and (Max-width:480px){
+            .background-clip{
+            display: none;
+           }
+            .maindiv{
+                background: url(./img/OrdinaryShabbyErne-size_restricted.gif);
+               background-size:100% 100%;
+               height: 100vh;
+               width: 100%;
+            }
+        .h1div{
+            width: 100%;
+            background-color: transparent;
+           }
+           h1{
+            font-size: 30px;
+           }
+           .mainbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid rgb(7, 222, 219);
+            background-color: rgba(34, 0, 0, 0.4);
+            border-radius: 40px;
+            padding: 5px 5px;
+            margin: 3px ;
+            width: 90%;
+            box-sizing: border-box;
+            margin-left: 5%;
+            font-size: 10px;
+            font-weight: 450;
+            /* background-color:#ffffff; */
+            /* opacity: 0.3; */
+        }
+           
+        select{
+ 
+    background-color:transparent;
+    border: none;
+    outline: 2px solid rgb(7, 255, 251);
+    font-size: 10px;
+            font-weight: 450;
+    color: rgb(20, 222, 219);
+    }
+   
+
+    input::placeholder{
+            color:rgb(7, 222, 219);
+            font-size: 10px;
+            font-weight: 450;
+        }
+     
+
+           input{
+            width: 90%;
+            padding: 5px 5px !important;
+            margin: 2px;
+            font-size: 10px;
+            font-weight: 450;
+           }
+           button{
+            padding: 3px 3px;
+            background-color: transparent;
+            color: rgb(7, 222, 219);
+            border: 2px solid rgb(7, 222, 219);
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 450;
+
+            
+            
+        }
+        #mainbtn{
+            background-color:transparent;
+           
+            border: 2px solid rgb(7, 222, 219);
+            color: rgb(7, 222, 219);
+            font-size: 10px;
+            font-weight: 450;
+          
+        }
+     
+    }
+    @media screen and (Min-width:481px) and (Max-width:768px){
+            .background-clip{
+            display: none;
+           }
+            .maindiv{
+                background: url(./img/OrdinaryShabbyErne-size_restricted.gif);
+               background-size:100% 100%;
+               height: 100vh;
+               width: 100%;
+            }
+        .h1div{
+            width: 100%;
+            background-color: transparent;
+           }
+           h1{
+            font-size: 30px;
+           }
+           .mainbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid rgb(7, 222, 219);
+            background-color: rgba(34, 0, 0, 0.4);
+            border-radius: 40px;
+            padding: 5px 5px;
+            margin: 3px ;
+            width: 90%;
+            box-sizing: border-box;
+            margin-left: 5%;
+            font-size: 10px;
+            font-weight: 450;
+            /* background-color:#ffffff; */
+            /* opacity: 0.3; */
+        }
+           
+        select{
+ 
+    background-color:transparent;
+    border: none;
+    outline: 2px solid rgb(7, 255, 251);
+    font-size: 10px;
+            font-weight: 450;
+    color: rgb(20, 222, 219);
+    }
+ 
+
+    input::placeholder{
+            color:rgb(7, 222, 219);
+            font-size: 10px;
+            font-weight: 450;
+        }
+      
+
+           input{
+            width: 90%;
+            padding: 5px 5px !important;
+            margin: 2px;
+            font-size: 10px;
+            font-weight: 450;
+           }
+           button{
+            padding: 3px 3px;
+            background-color: transparent;
+            color: rgb(7, 222, 219);
+            border: 2px solid rgb(7, 222, 219);
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 450;
+
+            
+            
+        }
+        #mainbtn{
+            background-color:transparent;
+       
+            border: 2px solid rgb(7, 222, 219);
+            color: rgb(7, 222, 219);
+            font-size: 10px;
+            font-weight: 450;
+          
+        }
+      
+    }
+    @media screen and (Min-width:769px) and (Max-width:1420px){
+            .background-clip{
+            display: none;
+           }
+            .maindiv{
+                background: url(./img/OrdinaryShabbyErne-size_restricted.gif);
+               background-size:100% 100%;
+               height: 100vh;
+               width: 100%;
+            }
+        .h1div{
+            width: 100%;
+            background-color: transparent;
+           }
+           h1{
+            font-size: 30px;
+           }
+           .mainbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid rgb(7, 222, 219);
+            background-color: rgba(34, 0, 0, 0.4);
+            border-radius: 40px;
+            padding: 5px 5px;
+            margin: 3px ;
+            width: 90%;
+            box-sizing: border-box;
+            margin-left: 5%;
+            font-size: 20px;
+            font-weight: 450;
+            /* background-color:#ffffff; */
+            /* opacity: 0.3; */
+        }
+           
+        select{
+ 
+    background-color:transparent;
+    border: none;
+    outline: 2px solid rgb(7, 255, 251);
+    font-size: 20px;
+            font-weight: 450;
+    color: rgb(20, 222, 219);
+    }
+    select:hover{
+        border: 2px solid  rgb(54, 220, 13);
+            color: rgb(54, 220, 13); 
+          
+            background-color: rgba(34, 0, 0, 0.4);
+    border: none;
+    outline: 2px solid rgb(54, 220, 13);
+   
+    }
+
+    input::placeholder{
+            color:rgb(7, 222, 219);
+            font-size: 20px;
+            font-weight: 450;
+        }
+        input::placeholder:hover{
+            color: rgb(54, 220, 13);
+            font-size: 15px;
+            font-weight: 450;
+        }
+
+           input{
+            width: 90%;
+            padding: 5px 5px !important;
+            margin: 2px;
+            font-size: 20px;
+            font-weight: 450;
+           }
+           button{
+            padding: 3px 3px;
+            background-color: transparent;
+            color: rgb(54, 220, 13);
+            border: 2px solid rgb(7, 222, 219);
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: 450;
+
+            
+            
+        }
+        #mainbtn{
+            background-color:transparent;
+       
+            border: 2px solid rgb(7, 222, 219);
+            color: rgb(7, 222, 219);
+            font-size: 20px;
+            font-weight: 450;
+          
+        }
+        #mainbtn:hover{
+            background-color: rgba(34, 0, 0, 0.4);
+          
+            border: 2px solid  rgb(54, 220, 13);
+            color: rgb(54, 220, 13);
+          
+        }
+    }
+    
+
+       
+    </style>
+</head>
+
+<body>
+    <div class="maindiv">
+        <video autoplay loop muted plays-inline class="background-clip">
+            <source src="/img/pexels-pressmaster-3130284-3840x2160-30fps.mp4" type="video/mp4">
+        </video>
+        <div class="h1div">
+            <h1 data-text="DYNAMIC FORM...">DYNAMIC FORM...</h1>
+        </div>
+       
+        <div class="parentdiv">
+            <select name="" id="select">
+                <option value="Select">-:Select:-</option>
+                <option value="Text">Text</option>
+                <option value="Number">Number</option>
+                <option value="Email">Email</option>
+                <option value="select">Select</option>
+                <option value="Radio">Radio</option>
+                <option value="Checkbox">Checkbox</option>
+                <option value="Submit">Submit</option>
+            </select>
+            <button id="mainbtn" onclick="funmain()">Add</button>
+            <!-- <div class="mainbox" id="mainbox"> -->
+
+            </div>
+
+            <div class="childdiv" id="child">
+            </div>
+
+            <div class="formvalid" id="formvalid"></div>
+
+            <div class="finalform" id="finalform"></div>
+
+        </div>
+    </div>
+
+    <script>
+        function funmain() {
+            var select = document.getElementById("select");
+
+            if (select.value == "Text") {
+                var childdiv = document.getElementById("child")
+                var mainbox = document.createElement("div");
+                mainbox.setAttribute("class", "mainbox")
+                // mainbox.style.backgroundColor="peachpuff"
+                childdiv.appendChild(mainbox);
+                var divv = document.createElement("span");
+                mainbox.appendChild(divv);
+                var input = document.createElement("input");
+                divv.appendChild(input);
+                var addbtn = document.createElement("button")
+                mainbox.appendChild(addbtn)
+                addbtn.innerHTML = "Add"
+                addbtn.setAttribute("onclick", "lable(this)")
+                var divv1 = document.createElement("span");
+                mainbox.appendChild(divv1);
+                var input2 = document.createElement("input");
+                divv1.appendChild(input2)
+                input2.placeholder = "Text";
+                input2.id = "input2"
+                var pp = document.createElement("span")
+                mainbox.appendChild(pp)
+                var closebtn = document.createElement("button")
+                closebtn.setAttribute("onclick", "closebtn(this)")
+                mainbox.appendChild(closebtn)
+                closebtn.innerHTML = "x"
+                closebtn.className = "closebtn"
+            } else if (select.value == "Number") {
+                var childdiv = document.getElementById("child")
+                var mainbox = document.createElement("div");
+                mainbox.setAttribute("class", "mainbox")
+                // mainbox.style.backgroundColor="peachpuff"
+                childdiv.appendChild(mainbox);
+                var divv = document.createElement("span");
+                mainbox.appendChild(divv);
+                var input = document.createElement("input");
+                divv.appendChild(input);
+                var addbtn = document.createElement("button")
+                mainbox.appendChild(addbtn)
+                addbtn.innerHTML = "Add"
+                addbtn.setAttribute("onclick", "lable(this)")
+                var divv1 = document.createElement("span");
+                mainbox.appendChild(divv1);
+                var input2 = document.createElement("input");
+                input2.type = "number"
+                divv1.appendChild(input2)
+                input2.placeholder = "Number";
+                var pp = document.createElement("span")
+                mainbox.appendChild(pp)
+                var closebtn = document.createElement("button")
+                closebtn.setAttribute("onclick", "closebtn(this)")
+                mainbox.appendChild(closebtn)
+                closebtn.innerHTML = "x"
+                closebtn.className = "closebtn"
+            } else if (select.value == "Email") {
+                var childdiv = document.getElementById("child")
+                var mainbox = document.createElement("div");
+                mainbox.setAttribute("class", "mainbox")
+                // mainbox.style.backgroundColor="peachpuff"
+                childdiv.appendChild(mainbox);
+                var divv = document.createElement("span");
+                mainbox.appendChild(divv);
+                var input = document.createElement("input");
+                divv.appendChild(input);
+                var addbtn = document.createElement("button")
+                mainbox.appendChild(addbtn)
+                addbtn.innerHTML = "Add"
+                addbtn.setAttribute("onclick", "lable(this)")
+                var divv1 = document.createElement("span");
+                mainbox.appendChild(divv1);
+                var input2 = document.createElement("input");
+                divv1.appendChild(input2)
+                input2.placeholder = "Email";
+                var pp = document.createElement("span")
+                mainbox.appendChild(pp)
+                var closebtn = document.createElement("button")
+                closebtn.setAttribute("onclick", "closebtn(this)")
+                mainbox.appendChild(closebtn)
+                closebtn.innerHTML = "x"
+                closebtn.className = "closebtn"
+            } else if (select.value == "Radio") {
+                var childdiv = document.getElementById("child")
+                var mainbox = document.createElement("div");
+                mainbox.setAttribute("class", "mainbox")
+                // mainbox.style.backgroundColor="peachpuff"
+                childdiv.appendChild(mainbox);
+                var divv = document.createElement("span");
+                mainbox.appendChild(divv);
+                var input = document.createElement("input");
+                divv.appendChild(input);
+                var addbtn = document.createElement("button")
+                mainbox.appendChild(addbtn)
+                addbtn.innerHTML = "Add"
+                var divv1 = document.createElement("span");
+                mainbox.appendChild(divv1);
+                var input2 = document.createElement("input");
+                divv1.appendChild(input2)
+                // input2.type="radio";
+                // input2.name="Gender";
+                input2.className="inputremove"
+                var pp = document.createElement("span")
+                mainbox.appendChild(pp)
+                var radioaddbtn = document.createElement("button")
+                mainbox.appendChild(radioaddbtn)
+                radioaddbtn.innerHTML = "Add"
+                radioaddbtn.className="addremove"
+                addbtn.setAttribute("onclick", "lable(this)")
+                radioaddbtn.setAttribute("onclick", "funrad(this)")
+                var done = document.createElement("button")
+                mainbox.appendChild(done)
+                done.setAttribute("onclick", "done(this)")
+                done.className="doneremove"
+
+                done.innerHTML = "Done"
+                var pp = document.createElement("span")
+                mainbox.appendChild(pp)
+                var pp = document.createElement("span")
+                mainbox.appendChild(pp)
+                var closebtn = document.createElement("button")
+                closebtn.setAttribute("onclick", "closebtn(this)")
+                mainbox.appendChild(closebtn)
+                closebtn.innerHTML = "x"
+                closebtn.className = "closebtn"
+            } else if (select.value == "select") {
+                var childdiv = document.getElementById("child");
+                var mainbox = document.createElement("div");
+                mainbox.setAttribute("class", "mainbox")
+                // mainbox.style.backgroundColor="peachpuff"
+                childdiv.appendChild(mainbox);
+                var divv = document.createElement("span");
+                mainbox.appendChild(divv);
+                var input = document.createElement("input");
+                divv.appendChild(input);
+                var addbtn = document.createElement("button");
+                mainbox.appendChild(addbtn)
+                addbtn.innerHTML = "Add"
+                addbtn.setAttribute("onclick", "lable(this)")
+                var divv1 = document.createElement("span");
+                mainbox.appendChild(divv1);
+
+                var input2 = document.createElement("input");
+                divv1.appendChild(input2)
+                input2.className="inputremove"
+                var select = document.createElement("select");
+                divv1.appendChild(select);
+                // input2.type="radio";
+                // input2.name="Gender";
+
+                var radioaddbtn = document.createElement("button")
+                mainbox.appendChild(radioaddbtn)
+                radioaddbtn.innerHTML = "Add"
+                radioaddbtn.className="addremove"
+                radioaddbtn.setAttribute("onclick", "funselect(this)")
+
+                var pp = document.createElement("span")
+                mainbox.appendChild(pp)
+                var done = document.createElement("button")
+                mainbox.appendChild(done)
+                done.setAttribute("onclick", "done3(this)")
+                done.className="doneremove"
+
+                done.innerHTML = "Done"
+                var pp = document.createElement("span")
+                mainbox.appendChild(pp)
+                var closebtn = document.createElement("button")
+                closebtn.setAttribute("onclick", "closebtn(this)")
+                mainbox.appendChild(closebtn)
+                closebtn.innerHTML = "x"
+                closebtn.className = "closebtn"
+
+            } else if (select.value == "Checkbox") {
+                var childdiv = document.getElementById("child");
+                var mainbox = document.createElement("div");
+                mainbox.setAttribute("class", "mainbox")
+                // mainbox.style.backgroundColor="peachpuff"
+                childdiv.appendChild(mainbox);
+                var divv = document.createElement("span");
+                mainbox.appendChild(divv);
+                var input = document.createElement("input");
+                divv.appendChild(input);
+                var addbtn = document.createElement("button");
+                mainbox.appendChild(addbtn)
+                addbtn.innerHTML = "Add"
+                var divv1 = document.createElement("span");
+                mainbox.appendChild(divv1);
+                var input2 = document.createElement("input");
+                divv1.appendChild(input2)
+                input2.className="inputremove"
+                // input2.type="radio";
+                // input2.name="Gender";
+                var pp = document.createElement("span")
+                mainbox.appendChild(pp)
+                var radioaddbtn = document.createElement("button")
+                mainbox.appendChild(radioaddbtn)
+                radioaddbtn.innerHTML = "Add"
+                radioaddbtn.className="addremove"
+                addbtn.setAttribute("onclick", "lable(this)")
+                radioaddbtn.setAttribute("onclick", "funcheck(this)")
+                var done = document.createElement("button")
+                mainbox.appendChild(done)
+                done.setAttribute("onclick", "done2(this)")
+                done.className="doneremove"
+
+                done.innerHTML = "Done"
+
+                var closebtn = document.createElement("button")
+                closebtn.setAttribute("onclick", "closebtn(this)")
+                mainbox.appendChild(closebtn)
+                closebtn.innerHTML = "x"
+                closebtn.className = "closebtn"
+            } else if (select.value == "Submit") {
+                var childdiv = document.getElementById("child");
+                var mainbox = document.createElement("div");
+                mainbox.setAttribute("class", "mainbox")
+                childdiv.appendChild(mainbox);
+            
+                var sub = document.createElement("button");
+                mainbox.appendChild(sub);
+                sub.innerHTML = "Submit";
+                
+                alert("is your form complete!");
+                sub.setAttribute("onclick", "submitfun(this)")
+
+                // var newdiv=document.getElementById("formvalid");
+                // var creatdiv=document.createElement("div")
+                // newdiv.appendChild(creatdiv)
+
+
+            }
+            //   var close=document.getElementsByClassName("closebtn")
+            //   close.style.display="block";
+        }
+
+        function lable(x) {
+            console.log(x.parentNode.childNodes[0])
+            var lable = document.createElement("label");
+            var lab = x.parentNode;
+            var input = x.parentNode.childNodes[0].firstChild
+            lable.type = "lable";
+            lable.innerHTML = x.parentNode.childNodes[0].firstChild.value + ":-";
+            input.style.display = "none";
+            x.parentNode.childNodes[0].appendChild(lable);
+
+            x.parentNode.childNodes[1].style.display = "none"
+            // console.log(x.parentNode.childNodes[0].firstChild);
+            console.log(x.parentNode.childNodes[0].firstChild);
+
+
+        }
+
+
+        function funrad(a) {
+            // console.log(a.parentNode.childNodes[2])
+            var radio = document.createElement("input");
+            radio.type = "radio";
+           
+            radio.name = "Gender";
+            a.parentNode.childNodes[2].appendChild(radio)
+            var name = document.createElement("span")
+            a.parentNode.childNodes[2].appendChild(name)
+            name.innerHTML = a.parentNode.childNodes[2].childNodes[0].value;
+            name.type = "radio"
+            radio.value = name.innerHTML
+            a.parentNode.childNodes[2].childNodes[0].value=""
+            // console.log(a.parentNode.childNodes[2].childNodes[2].innerHTML)
+
+        }
+
+        function done(d) {
+            // console.log(d.parentNode.childNodes[2])
+            var removeinput = d.parentNode.childNodes[2].childNodes[0];
+            removeinput.style.display = "none";
+
+            var removeadd = d.parentNode.childNodes[4];
+            removeadd.style.display = "none";
+
+            d.style.display = "none"
+        }
+
+        function funselect(b) {
+            var option = document.createElement("option");
+            var select1 = b.parentNode.childNodes[2].childNodes[1];
+            select1.appendChild(option);
+            option.name = "selop"
+            // select.appendChild(option);
+            // select.type="Select";
+            // // select.name="City";
+            // b.parentNode.appendChild(select);
+            var city = document.createElement("p");
+            option.appendChild(city);
+            city.innerHTML = b.parentNode.childNodes[2].childNodes[0].value;
+            city.type = "option";
+            option.value = b.parentNode.childNodes[2].value;
+            console.log(b.parentNode.childNodes[2]);
+            option.value = city.innerHTML
+            b.parentNode.childNodes[2].childNodes[0].value=""
+        }
+
+        function done3(d3) {
+            // console.log(d3.parentNode.childNodes)
+            var removeinput = d3.parentNode.childNodes[2].childNodes[0];
+            removeinput.style.display = "none";
+
+            var removeadd = d3.parentNode.childNodes[3];
+            removeadd.style.display = "none";
+
+            d3.style.display = "none"
+        }
+
+        function funcheck(ye) {
+            var checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+
+            checkbox.name = "Subject";
+            ye.parentNode.childNodes[2].appendChild(checkbox);
+            var checkboxname = document.createElement("span")
+            ye.parentNode.childNodes[2].appendChild(checkboxname);
+            checkboxname.innerHTML = ye.parentNode.childNodes[2].childNodes[0].value;
+            checkboxname.type = "checkbox";
+            checkbox.value = checkboxname.innerHTML
+            ye.parentNode.childNodes[2].childNodes[0].value=""
+        }
+
+        function done2(d2) {
+            // console.log(d2.parentNode.childNodes)
+            var removeinput = d2.parentNode.childNodes[2].childNodes[0];
+            removeinput.style.display = "none";
+
+            var removeadd = d2.parentNode.childNodes[4];
+            removeadd.style.display = "none";
+
+            d2.style.display = "none"
+        }
+
+        function closebtn(s) {
+            // console.log(s.parentNode)
+            // console.log(s.parentNode.childNodes[4])
+            var remove = s.parentNode;
+
+            remove.remove()
+
+        }
+
+
+        function submitfun(v) {
+
+
+            doneremove=document.getElementsByClassName("doneremove");
+            var flag = 0;
+
+            for(var i=0;i<doneremove.length;i++){
+                console.log(typeof(doneremove[i].getAttribute("style")));
+                if(typeof(doneremove[i].getAttribute("style"))=== "string"){
+
+                }else{
+                    flag++;
+                }
+            }
+
+            if(flag== 0){
+
+
+
+            //console.log(doneremove.length);
+
+          
+          // alert("Please click done before submitting")
+            var form = document.getElementById("formvalid");
+            // console.log(v.parentNode.parentNode.childNodes[3].childNodes[3]);
+ v.style = "display:none";
+ // console.log(v.parentNode.parentNode)
+ // v.parentNode.parentNode.style.display="none"
+ // form.style.backgroundColor="red"
+ form.innerHTML = v.parentNode.parentNode.innerHTML + "<button class='formbtn' onclick='fun3(this)' >Submit</button>"
+  
+ 
+
+
+
+ var close = document.getElementsByClassName("closebtn")
+ // close.style.display="none"
+ // console.log(close)
+ for (var i = 0; i < close.length; i) {
+     //    console.log(close[i])
+     close[i].remove()
+ }
+
+ doneremove=document.getElementsByClassName("doneremove")
+ for(var i=0;i<doneremove.length;i++){   
+     doneremove[i].onclick=function(){
+         alert("hello")
+     }
+ }
+ v.parentNode.parentNode.style.display="none"
+            }else{
+                alert("Please click done");
+            }
+
+
+
+            
+
+
+        }
+
+        // final form 
+
+
+        function fun3(m) {
+            // console.log(m.parentNode.childNodes)
+             
+           
+        
+
+            var maindiv = m.parentNode.childNodes
+
+           
+
+            for (var i = 0; i < maindiv.length; i++) {
+                var smalldiv = maindiv[i].childNodes
+                console.log(smalldiv)
+                if (smalldiv.length == 4) {
+                    smalldiv[3].innerHTML = smalldiv[2].childNodes[0].value
+                    smalldiv[2].childNodes[0].style.display = "none"
+                }
+                else if (smalldiv.length==8) {
+                    var gender = document.getElementsByName("Gender")
+                    for (var j = 0; j < gender.length; j++) {
+                        if (gender[j].checked){
+                            smalldiv[3].innerHTML+=gender[j].value
+                            smalldiv[2].style.display="none"
+                            // smalldiv[3].style.marginLeft="94%"
+                        }
+                    }
+                }
+                else if (smalldiv.length==6) {
+                    var checkbox = document.getElementsByName("Subject")
+                    for (var j = 0; j < checkbox.length; j++) {
+                        if (checkbox[j].checked){
+                            smalldiv[3].innerHTML+=checkbox[j].value +","
+                            smalldiv[2].style.display="none"
+                        }
+                    }
+                }
+                else if (smalldiv.length==7){                    
+                    smalldiv[4].innerHTML+= smalldiv[2].childNodes[1].value
+                    smalldiv[2].style.display="none"
+                //   smalldiv[4].style.marginLeft="93%"
+                  
+
+                }
+                var finaldiv = document.getElementById("finalform")
+                
+                finaldiv.style.backgroundColor="transparent"
+                finaldiv.innerHTML=m.parentNode.innerHTML
+                m.style.display="none"
+                
+            }
+            m.parentNode.remove()
+
+        }
+    </script>
+</body>
+
+</html>
